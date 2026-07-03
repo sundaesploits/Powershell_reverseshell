@@ -152,7 +152,5 @@ app = Generate(server_ip,server_port,filename,enable_obfuscation,enable_host,por
 app.replace_and_create()
 
 
-# app = Generate("127.0.0.1","80","kkk",True,True,8070)
-# app.replace_and_create()
 
 
