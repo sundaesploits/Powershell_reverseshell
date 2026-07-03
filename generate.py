@@ -56,12 +56,19 @@ class Generate:
     def host_file(self):
         #list IP as URL for downloading ps1 file
         try:
-            hostname = socket.gethostname()
-            ip_list = socket.gethostbyname_ex(hostname)[2]
+            
             print("\nAvailable Network URLs : \n------------------------")
-            for ip in ip_list:
+            s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+            try:
+                # 8.8.8.8 is Google DNS, but no data is actually sent over the network
+                s.connect(("8.8.8.8", 80))
+                ip = s.getsockname()[0]
                 print(f"[+] http://{ip}:{self.hosting_port}/{self.filename}.ps1")
-            print(f'\n')
+            except Exception:
+                # Fallback to local loopback if the machine is entirely offline
+                print(f"[+] http://127.0.0.1:{self.hosting_port}/{self.filename}.ps1")
+            finally:
+                s.close()
         except Exception:
             print("[X] Failed to list IPs.")
 
